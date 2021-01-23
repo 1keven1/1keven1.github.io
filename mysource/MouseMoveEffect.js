@@ -39,17 +39,22 @@
         }
     }
     AddListener();
+    var timer = null;
+    Rander();
+    /*
     setInterval(
         function () {
             Rander();
         },
         1000 / 60);
+    */
     function AddListener() {
         document.addEventListener("mousemove", onMouseMove);
         document.addEventListener("touchmove", Touch);
         document.addEventListener("touchstart", Touch);
     }
     function Rander() {
+        clearTimeout(timer);
         for (var i = 0; i < elementGroup.length; i++) {
             elementGroup[i].update();
             if (elementGroup[i].lifeSpan < 0) {
@@ -57,6 +62,7 @@
                 elementGroup.splice(i, 1);
             }
         }
+        timer=setTimeout(Rander,10);
     }
     function onMouseMove(t) {
         num = Math.floor(Math.random() * colors.length);
