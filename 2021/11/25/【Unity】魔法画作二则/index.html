@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【Unity】魔法画作二则 | SuzhiのBlog</title><meta name="keywords" content="Unity,特效,ShaderLab"><meta name="author" content="正式这种素质"><meta name="copyright" content="正式这种素质"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="最终效果展示  里世界效果效果设计考虑制作一个通过面片可以看见不一样的世界的“里世界”效果，只有透过特定的“窗户”才能看到那个世界。在这里，这个窗户就是我们的画。其中里面的物体受内部光照影响，内外世界互不影响。 这里就将正常的世界称为外部世界，透过“窗户”看到的世界叫里世界。 制作思路首先是渲染效果，所谓透过窗户，也就是说让让一些东西只在某一个面片覆盖的地方才渲染。所以这里使用Stencil Bu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Unity】魔法画作二则">
+<meta property="og:url" content="https://1keven1.github.io/2021/11/25/%E3%80%90Unity%E3%80%91%E9%AD%94%E6%B3%95%E7%94%BB%E4%BD%9C%E4%BA%8C%E5%88%99/index.html">
+<meta property="og:site_name" content="SuzhiのBlog">
+<meta property="og:description" content="最终效果展示  里世界效果效果设计考虑制作一个通过面片可以看见不一样的世界的“里世界”效果，只有透过特定的“窗户”才能看到那个世界。在这里，这个窗户就是我们的画。其中里面的物体受内部光照影响，内外世界互不影响。 这里就将正常的世界称为外部世界，透过“窗户”看到的世界叫里世界。 制作思路首先是渲染效果，所谓透过窗户，也就是说让让一些东西只在某一个面片覆盖的地方才渲染。所以这里使用Stencil Bu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Cover.jpg">
+<meta property="article:published_time" content="2021-11-25T09:57:16.000Z">
+<meta property="article:modified_time" content="2023-01-15T07:28:47.824Z">
+<meta property="article:author" content="正式这种素质">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="特效">
+<meta property="article:tag" content="ShaderLab">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Cover.jpg"><link rel="shortcut icon" href="/mysource/favicon.png"><link rel="canonical" href="https://1keven1.github.io/2021/11/25/%E3%80%90Unity%E3%80%91%E9%AD%94%E6%B3%95%E7%94%BB%E4%BD%9C%E4%BA%8C%E5%88%99/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 正式这种素质","link":"链接: ","source":"来源: SuzhiのBlog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#8187c2","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【Unity】魔法画作二则',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-15 15:28:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2336533_vrike6qn02.css"><link rel="stylesheet" href="/mysource/Effect.css"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">55</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-zuopin"></i><span> 作品集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%8A%80%E7%BE%8E/"><i class="fa-fw iconfont icon-sanwei"></i><span> 技美</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BE%8E%E6%9C%AF/"><i class="fa-fw fas fa-cubes"></i><span> 美术</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/CPP/"><i class="fa-fw iconfont icon-Cyuyan"></i><span> C++</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BD%91%E9%A1%B5/"><i class="fa-fw fas fa-file-code"></i><span> 网页</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E9%AB%98%E4%B8%AD/"><i class="fa-fw fas fa-school"></i><span> 高校時代</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 读书笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-dice"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-wrench"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%89%BA%E6%9C%AF/"><i class="fa-fw fas fa-palette"></i><span> 艺术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%BF%83%E7%90%86%E5%AD%A6/"><i class="fa-fw fas fa-brain"></i><span> 心理学</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E6%99%AE/"><i class="fa-fw fas fa-atom"></i><span> 科普</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E5%B9%BB/"><i class="fa-fw fas fa-rocket"></i><span> 科幻</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%85%B6%E4%BB%96/"><i class="fa-fw fas fa-book-open"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-pencil-alt"></i><span> 技术笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-pencil-alt"></i><span> 学习笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E6%A1%88%E4%BE%8B%E5%88%B6%E4%BD%9C/"><i class="fa-fw fas fa-vials"></i><span> 案例制作</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 筛选</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/pictures/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 作者介绍</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Cover.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SuzhiのBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-zuopin"></i><span> 作品集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%8A%80%E7%BE%8E/"><i class="fa-fw iconfont icon-sanwei"></i><span> 技美</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BE%8E%E6%9C%AF/"><i class="fa-fw fas fa-cubes"></i><span> 美术</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/CPP/"><i class="fa-fw iconfont icon-Cyuyan"></i><span> C++</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BD%91%E9%A1%B5/"><i class="fa-fw fas fa-file-code"></i><span> 网页</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E9%AB%98%E4%B8%AD/"><i class="fa-fw fas fa-school"></i><span> 高校時代</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 读书笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-dice"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-wrench"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%89%BA%E6%9C%AF/"><i class="fa-fw fas fa-palette"></i><span> 艺术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%BF%83%E7%90%86%E5%AD%A6/"><i class="fa-fw fas fa-brain"></i><span> 心理学</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E6%99%AE/"><i class="fa-fw fas fa-atom"></i><span> 科普</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E5%B9%BB/"><i class="fa-fw fas fa-rocket"></i><span> 科幻</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%85%B6%E4%BB%96/"><i class="fa-fw fas fa-book-open"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-pencil-alt"></i><span> 技术笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-pencil-alt"></i><span> 学习笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E6%A1%88%E4%BE%8B%E5%88%B6%E4%BD%9C/"><i class="fa-fw fas fa-vials"></i><span> 案例制作</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 筛选</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/pictures/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 作者介绍</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【Unity】魔法画作二则</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-11-25T09:57:16.000Z" title="发表于 2021-11-25 17:57:16">2021-11-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-15T07:28:47.824Z" title="更新于 2023-01-15 15:28:47">2023-01-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%8A%80%E7%BE%8E/">技美</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【Unity】魔法画作二则"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2021/11/25/%E3%80%90Unity%E3%80%91%E9%AD%94%E6%B3%95%E7%94%BB%E4%BD%9C%E4%BA%8C%E5%88%99/#post-comment"><span class="waline-comment-count" id="/2021/11/25/%E3%80%90Unity%E3%80%91%E9%AD%94%E6%B3%95%E7%94%BB%E4%BD%9C%E4%BA%8C%E5%88%99/"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="最终效果展示"><a href="#最终效果展示" class="headerlink" title="最终效果展示"></a>最终效果展示</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/1.gif" alt="里世界效果"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/2.gif" alt="光照变化效果"></p>
+<h1 id="里世界效果"><a href="#里世界效果" class="headerlink" title="里世界效果"></a>里世界效果</h1><h2 id="效果设计"><a href="#效果设计" class="headerlink" title="效果设计"></a>效果设计</h2><p>考虑制作一个通过面片可以看见不一样的世界的“里世界”效果，只有透过特定的“窗户”才能看到那个世界。在这里，这个窗户就是我们的画。其中里面的物体受内部光照影响，内外世界互不影响。</p>
+<p>这里就将正常的世界称为外部世界，透过“窗户”看到的世界叫里世界。</p>
+<h2 id="制作思路"><a href="#制作思路" class="headerlink" title="制作思路"></a>制作思路</h2><p>首先是渲染效果，所谓透过窗户，也就是说让让一些东西只在某一个面片覆盖的地方才渲染。所以这里使用Stencil Buffer这个存在来实现这个效果。</p>
+<p>我们首先让场景中其他不透明 (Opaque) 与不透明度检测 (Alpha Test) 的物品渲染完（这里暂时不考虑透明物体，因为透明物体涉及到复杂的排序问题）。然后渲染那个面片。在渲染面片的时候，让所有面片的像素除了输出颜色外，还固定往Stencil Buffer里面的对应像素点写一个值，比如说写入1，同时面片不写入任何深度。然后渲染所有里世界物品，里世界的物体都要经过Stencil Buffer检测，只有当当前像素的Stencil Buffer值为1的时候才能通过检测。也就是说只有被面片覆盖的像素才会渲染里世界的模型。</p>
+<p>这里就出现了一个问题，因为没开启面片的深度写入，所以说面片所覆盖的像素的深度值还是外部世界的深度值。而里世界因为要互相遮挡，必须要开启深度检测，所以说我们需要先渲染一个里世界天空盒，开启Stencil Buffer检测单不开启深度测试（也就是说只要是被面片覆盖的像素都一定会绘制），进行深度覆盖，之后在渲染其他里世界物品。</p>
+<p>所以说，这里要注意严格控制渲染次序防止出现排序错误。所有的里世界效果都要手动修改渲染次序。</p>
+<p>整个渲染的次序如下：</p>
+<ol>
+<li>场景内其他不透明、透明度检测物体都渲染完成；</li>
+<li>渲染面片，正常深度检测但不写入深度（被外部世界中不透明物体遮挡），将通过深度检测的每个像素的Stencil Buffer设置为1，并且输出颜色作为Clear Color；</li>
+<li>渲染里世界天空盒，当 Stencil Buffer 的值等于1的时候通过检测，不做深度检测但写入深度值，将整个面片内的深度覆盖为一个较大的值；</li>
+<li>渲染里世界的物体，当 Stencil Buffer 的值等于1的时候通过检测，正常深度检测正常深度写入。</li>
+</ol>
+<p>下面进行一个简单的效果实现。</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>先新建一个场景，并且摆放一些东西（如图）。其中黑色的是上面说的平面，白色的是现实世界的物品，蓝色的是里世界的物品。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Scene.jpg" alt="场景"></p>
+<p><strong>我这里所有 shader 都使用 Amplify Shader Editor（ASE）插件进行编写，不过代码部分的实现很简单，我也会放上关键部分的代码实现</strong></p>
+<p>先制作平面的shader：</p>
+<ul>
+<li><p>处理渲染次序</p>
+<p>Unity中，不透明 (Opaque) 渲染队列为2000，透明度测试 (Alpha Test) 为2450，透明度混合 (Alpha Blend) 为3000。我们要将平面的渲染队列放在 Alpha Test 之后，所以我们将渲染队列设置为 Alpha Test + 10 ，也就是2460。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Queue.jpg" alt="调整渲染队列"></p>
+<p>代码实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tags&#123; &quot;RenderType&quot; = &quot;Opaque&quot;  &quot;Queue&quot; = &quot;AlphaTest+10&quot; &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>现在在材质中可以看到渲染队列已经正确的变成了2460：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Queue2460.jpg" alt="渲染队列变为2460"></p>
+</li>
+<li><p>进行 Stencil Buffer 的操作</p>
+<p>现在我们要开启 Stencil Buffer 写入，将其的参考值设置为我们想写入的值，这里是 1 。然后将 Comparison 设置为 always ，意思是不进行 Stencil 测试。将 Pass Front 设置为替换，其他都设置为保持。这样只要深度测试通过，就一定会向 Stencil Buffer 中写入 1 这个值。</p>
+<p>代码实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Stencil</span><br><span class="line">  &#123;</span><br><span class="line">  	Ref 1</span><br><span class="line">  	Comp Always</span><br><span class="line">  	Pass Replace</span><br><span class="line">  	Fail Keep</span><br><span class="line">  	ZFail Keep</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理深度测试</p>
+<p>这里要正常深度测试，但是不进行深度写入：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/DepthTest.jpg" alt="深度测试设置"></p>
+<p>代码实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ZWrite Off</span><br><span class="line">ZTest Less</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输出颜色</p>
+<p>输出一个固定颜色就可以，这个是作为，类似清屏颜色使用的（虽然说后面会绘制天空盒）。</p>
+</li>
+</ul>
+<p>然后在制作里世界shader：</p>
+<ul>
+<li><p>处理渲染次序</p>
+<p>这里设置成 Alpha Test + 20即可，设置方法跟上面一样。</p>
+</li>
+<li><p>Stancil Buffer 操作</p>
+<p>这里将参考值也设置为1，只有在相等的时候才通过测试，其他情况都不对 Buffer 内容做任何修改。这样就只会渲染在面片后的东西了。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Stencil.jpg" alt="里世界 Stencil Buffer 设置"></p>
+<p>代码实现与上面相同。</p>
+</li>
+<li><p>处理深度测试</p>
+<p>深度测试不用改，正常测试，开启深度写入。</p>
+</li>
+<li><p>输出颜色</p>
+<p>正常输出颜色，我这里直接用的表面着色器的 Standard 光照模型。</p>
+</li>
+</ul>
+<p>现在就可以正常制作出 Stencil 的效果了，也会正确被外部世界遮挡。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Effect1.jpg" alt="效果"></p>
+<p>不过现在还有一个问题就是，处于屏幕后面的里世界物体还是会被外部世界遮挡，这是因为里世界物体是正常做深度测试的，这里下面的球体被地面遮挡了。这就是我前面说要加天空盒覆盖原有深度信息的原因。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/DepthWrong.jpg" alt="深度错误"></p>
+<p>下面来制作天空盒 shader ，其他的设置都与里世界 shader 一样，只是渲染队列变成了 Alpha Test + 15（平面之后，里世界其他物体之前），关闭深度测试：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/SkyDepth.jpg" alt="里世界天空盒的深度测试设置"></p>
+<p>这里我为了方便，直接制作 Unlit Shader 输出一个颜色，如果有需求采样一个 Cubemap 即可。然后放一个半球形模型，将天空盒材质附上去。现在就没有任何问题了。这里记得吧天空盒的阴影之类的全关掉。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/AddSky.jpg" alt="加了天空盒后"></p>
+<h2 id="光照设置"><a href="#光照设置" class="headerlink" title="光照设置"></a>光照设置</h2><p>现在里世界还是会收到外部世界的光照，并且投射阴影，这是我们不想要的。我们直接新建一个层，将里世界所有物品加加进去。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Layer.jpg" alt="设置层"></p>
+<p>然后设置光照中的 Culling Mask 就可以控制光照的影响层了，外部世界的光源取消对 Inner World 层的影响，然后制作里世界光照只影响 Inner world 层即可。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Light.jpg" alt="设置光照"></p>
+<p>至此，里世界这个魔法画作效果就可以制作了。</p>
+<h1 id="光照变化效果"><a href="#光照变化效果" class="headerlink" title="光照变化效果"></a>光照变化效果</h1><h2 id="效果设计-1"><a href="#效果设计-1" class="headerlink" title="效果设计"></a>效果设计</h2><p>想要一个效果，就是一个材质，被光照到与平常是两种纹理。可以做魔法画作效果，也可以做类似紫外线照射的效果。</p>
+<h2 id="制作思路-1"><a href="#制作思路-1" class="headerlink" title="制作思路"></a>制作思路</h2><p>有以下两种思路：</p>
+<ol>
+<li>玩家有手电筒，手电筒光照范围是个锥形。则可以把玩家手电筒位置，手电筒方向，聚光角度这三个参数传入 shader ，进行一些计算就可以得知该点是否在锥形内。</li>
+<li>Shader 内可以轻松地得到光源的各种属性，而且 shader 会默认为每个光源添加一个Forward Add Pass进行渲染，直接在这个pass上进行操作即可。</li>
+</ol>
+<p>很容易看出，思路2不仅可以支持多光源，且计算也少很多，制作调试方便，性能好，因此选择思路2。</p>
+<p>在 Unity 的前向渲染管线中，一个物体的 shader 会每个光照都分别执行一遍，其中最主要的平行光照走 Forward Base Pass，其他光照则走 Forward Add Pass。那这样就很简单了，只要让所有走 Forward Add Pass 光照都会更改其的纹理就好了，而且 shader 内也很好获取到光照衰减，思路一下子清晰了起来。</p>
+<h2 id="具体实现-1"><a href="#具体实现-1" class="headerlink" title="具体实现"></a>具体实现</h2><p>一般来讲，Forward Add Pass 一般会设置为 Blend One One 也就是叠加，因为光照本身就是做颜色叠加。但是我们这里并不把他当个光照看，我们要通过光照的衰减值确定哪里需要使用贴图2的信息，所以需要把光照衰减数据作为 Alpha 值进行混合，所以要设置成 Blend DstAlpha OneMinusSrcAlpha 。</p>
+<p>这里因为改动比较大，表面着色器不支持，只能用传统的顶点片元进行编写。</p>
+<p>最终要的 Forward Add Pass 的片元着色器代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fixed4 frag(v2f i) : SV_Target</span><br><span class="line">&#123;</span><br><span class="line">    float3 worldPos = float3(i.TtoW0.w, i.TtoW1.w, i.TtoW2.w);</span><br><span class="line">    fixed3 diffuse = tex2D(_LightTex, i.uv.zw).rgb;</span><br><span class="line"></span><br><span class="line">    UNITY_LIGHT_ATTENUATION(atten, i, worldPos);</span><br><span class="line">    atten = smoothstep(atten, 0, 0.2);</span><br><span class="line"></span><br><span class="line">    return fixed4(diffuse * atten, atten);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样除了主要的平行光外，其他灯光都会让这这个材质采用 _LightTex 这张贴图进行覆盖。光照变化的效果就制作完成了。</p>
+<hr>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Cover.jpg"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">正式这种素质</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://1keven1.github.io/2021/11/25/%E3%80%90Unity%E3%80%91%E9%AD%94%E6%B3%95%E7%94%BB%E4%BD%9C%E4%BA%8C%E5%88%99/">https://1keven1.github.io/2021/11/25/%E3%80%90Unity%E3%80%91%E9%AD%94%E6%B3%95%E7%94%BB%E4%BD%9C%E4%BA%8C%E5%88%99/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://1keven1.github.io" target="_blank">SuzhiのBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Unity/">Unity</a><a class="post-meta__tags" href="/tags/%E7%89%B9%E6%95%88/">特效</a><a class="post-meta__tags" href="/tags/ShaderLab/">ShaderLab</a></div><div class="post_share"><div class="social-share" data-image="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]MagicPaint2/Cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_WX.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_WX.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_ZFB.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_ZFB.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/11/25/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91WebGLProgramingGuide/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]WebGLProgrammingGuide/Cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【读书笔记】WebGL Programming Guide</div></div></a></div><div class="next-post pull-right"><a href="/2021/11/14/%E3%80%90UE4%E3%80%91%E8%99%9A%E5%B9%BB72h%E5%88%9B%E4%BD%9C%E6%8C%91%E6%88%98%E8%B5%9B%E2%80%94%E2%80%94%E5%AE%85%E7%94%B7%E8%8D%92%E5%9D%82%E7%9A%84%E4%B8%80%E5%A4%A9/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE4]ADayOfOTaKuAraSaka/InGame.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【UE4】虚幻72h创作挑战赛——宅男荒坂的一天</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/04/01/%E3%80%90Unity%E3%80%91URP%E8%87%AA%E5%AE%9A%E4%B9%89%E5%90%8E%E5%A4%84%E7%90%86%E6%95%88%E6%9E%9C/" title="【Unity】URP自定义后处理效果"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]URPCustomPP/Cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-04-01</div><div class="title">【Unity】URP自定义后处理效果</div></div></a></div><div><a href="/2021/03/16/%E3%80%90Unity%E3%80%91%E5%90%8E%E6%9C%9F%E5%A4%84%E7%90%86Bloom%E6%95%88%E6%9E%9C/" title="【Unity】代码实现后期处理Bloom效果"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]CodeBloom/Final.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-16</div><div class="title">【Unity】代码实现后期处理Bloom效果</div></div></a></div><div><a href="/2021/03/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91UnityShader%E5%85%A5%E9%97%A8%E7%B2%BE%E8%A6%81/" title="【读书笔记】UnityShader入门精要"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]UnityShaderBook/Cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-17</div><div class="title">【读书笔记】UnityShader入门精要</div></div></a></div><div><a href="/2021/01/04/%E3%80%902D%E7%BE%8E%E6%9C%AF%E3%80%91%E5%BF%AB%E6%8A%8A%E5%8F%A3%E7%BD%A9%E6%88%B4%E5%A5%BD%E2%80%94%E2%80%94%E6%A8%AA%E7%89%88%E8%BF%87%E5%85%B3%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="【2D美术】快把口罩戴好——横版过关小游戏"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[2D]WearMask/Cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-04</div><div class="title">【2D美术】快把口罩戴好——横版过关小游戏</div></div></a></div><div><a href="/2021/03/02/%E3%80%90Unity%E3%80%91%E5%9C%B0%E5%BD%A2%E5%88%B6%E4%BD%9C/" title="【Unity】地形制作"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity]Terrain/SS1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-02</div><div class="title">【Unity】地形制作</div></div></a></div><div><a href="/2021/03/12/%E3%80%90UE4%E3%80%91%E7%89%B9%E6%95%88%E2%80%94%E2%80%94%E6%9A%97%E5%BD%B1%E6%B0%B4%E6%BB%B4/" title="【UE4】特效——暗影水滴"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE4]DarkDrop/Cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-12</div><div class="title">【UE4】特效——暗影水滴</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/Avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">正式这种素质</div><div class="author-info__description">Suzhi_Zhang</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">55</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div><a id="card-info-btn" href="/about/"><i class="fas fa-heart"></i><span>俺の紹介</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1keven1" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://steamcommunity.com/profiles/76561198373086208/" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=9D8RfprO-2JfSwD_Fcm7Hlm2BVacjsLU&amp;noverify=0" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://space.bilibili.com/19287347/" target="_blank" title="Bilibili"><i class="fas fa-bold"></i></a><a class="social-icon" href="mailto:zhangsuzhe@sina.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">微信：omaewamousinndeiru <br/> QQ：577181274 <br/> 添加请标明来意<br/>理由を説明してください <br/> 邮箱：zhangsuzhe@sina.com</div></div><div class="card-widget"><div class="item-headline"><i class="iconfont icon-zuopin"></i><span>作品集</span></div><div class="item-content"><a style="font-size:17px;" href="/categories/作品集/"><strong>全部</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/游戏/"><strong>游戏</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/技美/"><strong>技美</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/美术/"><strong>美术</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/CPP/"><strong>C++</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/网页/"><strong>网页</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/高中/"><strong>高校時代</strong></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-number">1.</span> <span class="toc-text">最终效果展示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8C%E4%B8%96%E7%95%8C%E6%95%88%E6%9E%9C"><span class="toc-number">2.</span> <span class="toc-text">里世界效果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.1.</span> <span class="toc-text">效果设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">制作思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.3.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%85%A7%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.4.</span> <span class="toc-text">光照设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E7%85%A7%E5%8F%98%E5%8C%96%E6%95%88%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text">光照变化效果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E8%AE%BE%E8%AE%A1-1"><span class="toc-number">3.1.</span> <span class="toc-text">效果设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E6%80%9D%E8%B7%AF-1"><span class="toc-number">3.2.</span> <span class="toc-text">制作思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">3.3.</span> <span class="toc-text">具体实现</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/18/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E4%B8%89%E4%BD%93%E2%80%94%E2%80%94%E5%88%98%E6%85%88%E6%AC%A3/" title="【读书笔记】三体——刘慈欣"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]ThreeBody/Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【读书笔记】三体——刘慈欣"/></a><div class="content"><a class="title" href="/2022/12/18/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E4%B8%89%E4%BD%93%E2%80%94%E2%80%94%E5%88%98%E6%85%88%E6%AC%A3/" title="【读书笔记】三体——刘慈欣">【读书笔记】三体——刘慈欣</a><time datetime="2023-02-02T08:47:55.951Z" title="更新于 2023-02-02 16:47:55">2023-02-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/30/%E3%80%90UE4_C-%E3%80%91%E8%AF%BB%E5%8F%96%E8%B4%B4%E5%9B%BE%E8%B5%84%E6%BA%90%E5%83%8F%E7%B4%A0%E9%A2%9C%E8%89%B2%E5%80%BC/" title="【UE4/C++】读取贴图资源像素颜色值"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Logo/UE_Big.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【UE4/C++】读取贴图资源像素颜色值"/></a><div class="content"><a class="title" href="/2021/07/30/%E3%80%90UE4_C-%E3%80%91%E8%AF%BB%E5%8F%96%E8%B4%B4%E5%9B%BE%E8%B5%84%E6%BA%90%E5%83%8F%E7%B4%A0%E9%A2%9C%E8%89%B2%E5%80%BC/" title="【UE4/C++】读取贴图资源像素颜色值">【UE4/C++】读取贴图资源像素颜色值</a><time datetime="2023-01-16T02:55:41.445Z" title="更新于 2023-01-16 10:55:41">2023-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%9A%84236%E4%B8%AA%E6%8A%80%E5%B7%A7/" title="【读书笔记】游戏设计的236个技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]GameDesign236Tech/Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【读书笔记】游戏设计的236个技巧"/></a><div class="content"><a class="title" href="/2022/11/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%9A%84236%E4%B8%AA%E6%8A%80%E5%B7%A7/" title="【读书笔记】游戏设计的236个技巧">【读书笔记】游戏设计的236个技巧</a><time datetime="2023-01-16T02:49:33.744Z" title="更新于 2023-01-16 10:49:33">2023-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/18/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%88%98%E6%85%88%E6%AC%A3%E9%95%BF%E7%AF%87%E5%B0%8F%E8%AF%B4/" title="【读书笔记】刘慈欣长篇小说"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]LiuCiXinLong/Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【读书笔记】刘慈欣长篇小说"/></a><div class="content"><a class="title" href="/2022/09/18/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E5%88%98%E6%85%88%E6%AC%A3%E9%95%BF%E7%AF%87%E5%B0%8F%E8%AF%B4/" title="【读书笔记】刘慈欣长篇小说">【读书笔记】刘慈欣长篇小说</a><time datetime="2023-01-16T02:47:19.067Z" title="更新于 2023-01-16 10:47:19">2023-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/14/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E6%97%B6%E9%97%B4%E7%9A%84%E5%BD%A2%E7%8A%B6/" title="【读书笔记】时间的形状"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]ShiJianDeXingZhuang/Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【读书笔记】时间的形状"/></a><div class="content"><a class="title" href="/2022/11/14/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E6%97%B6%E9%97%B4%E7%9A%84%E5%BD%A2%E7%8A%B6/" title="【读书笔记】时间的形状">【读书笔记】时间的形状</a><time datetime="2023-01-16T02:45:08.390Z" title="更新于 2023-01-16 10:45:08">2023-01-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 正式这种素质</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">哟，欢迎来到<a href="https://1keven1.github.io/">我的博客</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-comment-4e7b4i3ay.vercel.app/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
