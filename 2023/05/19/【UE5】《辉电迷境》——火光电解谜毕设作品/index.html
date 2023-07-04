@@ -1,0 +1,432 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【UE5】《辉电迷境》——火光电解谜毕设作品 | SuzhiのBlog</title><meta name="keywords" content="UE5,蓝图,大型游戏"><meta name="author" content="正式这种素质"><meta name="copyright" content="正式这种素质"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在中国传媒大学的本科毕设作品，使用UE5引擎制作的一款基于火光电元素的解谜游戏。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【UE5】《辉电迷境》——火光电解谜毕设作品">
+<meta property="og:url" content="https://1keven1.github.io/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/index.html">
+<meta property="og:site_name" content="SuzhiのBlog">
+<meta property="og:description" content="在中国传媒大学的本科毕设作品，使用UE5引擎制作的一款基于火光电元素的解谜游戏。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/Cover1.jpg">
+<meta property="article:published_time" content="2023-05-19T03:22:07.000Z">
+<meta property="article:modified_time" content="2023-07-04T07:15:36.289Z">
+<meta property="article:author" content="正式这种素质">
+<meta property="article:tag" content="UE5">
+<meta property="article:tag" content="蓝图">
+<meta property="article:tag" content="大型游戏">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/Cover1.jpg"><link rel="shortcut icon" href="/mysource/favicon.png"><link rel="canonical" href="https://1keven1.github.io/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 正式这种素质","link":"链接: ","source":"来源: SuzhiのBlog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#8187c2","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【UE5】《辉电迷境》——火光电解谜毕设作品',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-04 15:15:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_2336533_vrike6qn02.css"><link rel="stylesheet" href="/mysource/Effect.css"><meta name="generator" content="Hexo 6.1.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/Avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-zuopin"></i><span> 作品集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%8A%80%E7%BE%8E/"><i class="fa-fw iconfont icon-sanwei"></i><span> 技美</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BE%8E%E6%9C%AF/"><i class="fa-fw fas fa-cubes"></i><span> 美术</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/CPP/"><i class="fa-fw iconfont icon-Cyuyan"></i><span> C++</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BD%91%E9%A1%B5/"><i class="fa-fw fas fa-file-code"></i><span> Web</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E9%AB%98%E4%B8%AD/"><i class="fa-fw fas fa-school"></i><span> 高校時代</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 读书笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-dice"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-wrench"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%89%BA%E6%9C%AF/"><i class="fa-fw fas fa-palette"></i><span> 艺术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%BF%83%E7%90%86%E5%AD%A6/"><i class="fa-fw fas fa-brain"></i><span> 心理学</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E6%99%AE/"><i class="fa-fw fas fa-atom"></i><span> 科普</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E5%B9%BB/"><i class="fa-fw fas fa-rocket"></i><span> 科幻</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%85%B6%E4%BB%96/"><i class="fa-fw fas fa-book-open"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-pencil-alt"></i><span> 技术笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-pencil-alt"></i><span> 学习笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E6%A1%88%E4%BE%8B%E5%88%B6%E4%BD%9C/"><i class="fa-fw fas fa-vials"></i><span> 案例制作</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 筛选</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/pictures/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 作者介绍</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/Cover1.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SuzhiのBlog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-zuopin"></i><span> 作品集</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%8A%80%E7%BE%8E/"><i class="fa-fw iconfont icon-sanwei"></i><span> 技美</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BE%8E%E6%9C%AF/"><i class="fa-fw fas fa-cubes"></i><span> 美术</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/CPP/"><i class="fa-fw iconfont icon-Cyuyan"></i><span> C++</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E7%BD%91%E9%A1%B5/"><i class="fa-fw fas fa-file-code"></i><span> Web</span></a></li><li><a class="site-page child" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E9%AB%98%E4%B8%AD/"><i class="fa-fw fas fa-school"></i><span> 高校時代</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 读书笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-server"></i><span> 全部</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%B8%B8%E6%88%8F/"><i class="fa-fw fas fa-dice"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%8A%80%E6%9C%AF/"><i class="fa-fw fas fa-wrench"></i><span> 技术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%89%BA%E6%9C%AF/"><i class="fa-fw fas fa-palette"></i><span> 艺术</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%BF%83%E7%90%86%E5%AD%A6/"><i class="fa-fw fas fa-brain"></i><span> 心理学</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E6%99%AE/"><i class="fa-fw fas fa-atom"></i><span> 科普</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%A7%91%E5%B9%BB/"><i class="fa-fw fas fa-rocket"></i><span> 科幻</span></a></li><li><a class="site-page child" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%85%B6%E4%BB%96/"><i class="fa-fw fas fa-book-open"></i><span> 其他</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-pencil-alt"></i><span> 技术笔记</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa-fw fas fa-pencil-alt"></i><span> 学习笔记</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/%E6%A1%88%E4%BE%8B%E5%88%B6%E4%BD%9C/"><i class="fa-fw fas fa-vials"></i><span> 案例制作</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 筛选</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div><div class="menus_item"><a class="site-page" href="/pictures/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 作者介绍</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【UE5】《辉电迷境》——火光电解谜毕设作品</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-19T03:22:07.000Z" title="发表于 2023-05-19 11:22:07">2023-05-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-04T07:15:36.289Z" title="更新于 2023-07-04 15:15:36">2023-07-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/">作品集</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%BD%9C%E5%93%81%E9%9B%86/%E6%B8%B8%E6%88%8F/">游戏</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="【UE5】《辉电迷境》——火光电解谜毕设作品"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/#post-comment"><span class="waline-comment-count" id="/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note info modern"><p>游戏试玩：<a target="_blank" rel="noopener" href="https://kkdt0fxrav.feishu.cn/drive/folder/JCtSfUqM9llJ3ndqX4ScQgb6njc">https://kkdt0fxrav.feishu.cn/drive/folder/JCtSfUqM9llJ3ndqX4ScQgb6njc</a><br>B站游戏区：<a target="_blank" rel="noopener" href="https://www.biligame.com/detail/?id=110605">https://www.biligame.com/detail/?id=110605</a></p>
+</div>
+
+<h1 id="游戏截图"><a href="#游戏截图" class="headerlink" title="游戏截图"></a>游戏截图</h1><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/Cover1.jpg" alt="Cover1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/ScreenShot1.jpg" alt="Cover1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/ScreenShot2.jpg" alt="Cover1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/ScreenShot3.jpg" alt="Cover1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/ScreenShot4.jpg" alt="Cover1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/ScreenShot5.jpg" alt="Cover1"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/ScreenShot6.jpg" alt="Cover1"></p>
+<h1 id="游戏介绍"><a href="#游戏介绍" class="headerlink" title="游戏介绍"></a>游戏介绍</h1><div style="position: relative; padding: 30% 45%;">
+<iframe src="//player.bilibili.com/player.html?aid=826346880&bvid=BV1Qg4y1F72e&cid=1134746036&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"> 
+</iframe>
+</div>
+
+<h2 id="背景设定"><a href="#背景设定" class="headerlink" title="背景设定"></a>背景设定</h2><p>这是一款基于光和电转换的解密游戏。在游戏中，玩家需要通过操作不同的元件装置，实现光和电的相互转换，解开各种远古文明遗留的谜题，找到通往遗迹深处的路径。</p>
+<p>在游戏中，玩家需要利用光的反射、折射等特性，将光线引导至正确的位置，以触发电路，解开谜题。同时，玩家还需要根据电路的连接方式，利用电流的传输规律，操控各种电路设备，借助它们探寻真相。</p>
+<p>游戏设有多个关卡，每一关都按照难度曲线设置了多样化的挑战，需要玩家不断思考、尝试，以找到完成试练的最优解法。</p>
+<p>在该游戏中，玩家将扮演一名古老部落的传承者，他在命运的驱使下踏上旅程，前往探寻两个失落已久的文明留存的知识。玩家在逐步解锁古代文明的机关与遗址后，将发现其背后与灾厄、毁灭、拯救有关的深邃秘密。</p>
+<h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><p>平台：PC；</p>
+<p>类型：3D解谜；</p>
+<h2 id="玩法简介"><a href="#玩法简介" class="headerlink" title="玩法简介"></a>玩法简介</h2><p>WASD移动，空格跳跃；</p>
+<p>E交互，右键伸出火把；</p>
+<p>游戏内可以更改键位。</p>
+<h2 id="分工"><a href="#分工" class="headerlink" title="分工"></a>分工</h2><p>组内一共有五位同学：我、Perhacept、指定龙场、Barrucade、ppppp</p>
+<ul>
+<li>我：程序、技术美术、PM；</li>
+<li>Perhacept：策划，程序；</li>
+<li>指定龙场：3D美术；</li>
+<li>Barrucade：策划；</li>
+<li>ppppp：2D美术、UI；</li>
+</ul>
+<h1 id="前期产品分析设计"><a href="#前期产品分析设计" class="headerlink" title="前期产品分析设计"></a>前期产品分析设计</h1><p>与Game Jam等短时间内的游戏开发不同，对于这种较大型游戏项目开发，在正式投入生产制作之前，单独花费时间进行产品设计分析、程序框架架构设计是非常必要的。主要需要做的分析及设计有：</p>
+<p>确定游戏的目标受众和核心玩法，以更好地了解游戏的目标受众以及整体风格和氛围。这些因素将在整个开发过程中影响所有的设计决策，因此确定它们是至关重要的。</p>
+<p>确定技术需求，进行程序框架和架构设计。这将在整个开发过程中指导开发人员的技术决策，并且可以在设计前期就为游戏的后期发展打好基础，方便后期进行拓展开发。</p>
+<h2 id="作品系统分析"><a href="#作品系统分析" class="headerlink" title="作品系统分析"></a>作品系统分析</h2><p>在作品系统分析阶段，主要对游戏的玩法以及核心机制进行分析，并据此设计技术路线以及初步实现思路。</p>
+<p><strong>作品玩法</strong></p>
+<p>本作品为PC端3D关卡类解谜游戏。解谜游戏要求使用较为单一的操作或者机制组成多种多样的关卡，而关卡类游戏要求在开发后期的量产阶段可以迅速产出新关卡。</p>
+<p>因此，本作品的程序设计必须具有极强的可拓展性和复用性。</p>
+<p>可拓展性体现在于，可以迅速在原有框架内添加新玩法元素；复用性体现在，可以使用有限的玩法组件迅速搭建出各种新关卡。</p>
+<p><strong>核心机制</strong></p>
+<p>本作品的核心机制主要由火、光、电三种元素组成。为了降低玩家的学习成本，这三种元素应各自成一套较为相似体系。同时，为了具有较强的可拓展性，应使用接口进行通信。</p>
+<p>因此，在程序设计方面，三套系统应各自使用一套解耦的体系，通过对应的接口实现体系间通信。</p>
+<h2 id="作品风格分析"><a href="#作品风格分析" class="headerlink" title="作品风格分析"></a>作品风格分析</h2><p><strong>美术风格</strong></p>
+<p>本作品的美术风格为治愈风格，类似吉比特画风。整个画面应该较为干净，色彩鲜亮。</p>
+<p>因此，在渲染以及材质方面，应不使用真实渲染，并对细节进行控制，只保留必要细节，防止细节过多导致的杂乱。同时使用后处理等方法控制整体场景的色彩。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/ArtStyle.jpg" alt="画面干净 减少细节"></p>
+<p><strong>用户体验设计</strong></p>
+<p>本作品重交互体验，因此对于某个场景元素，必须可以让玩家在短时间内分辨出其的性质，如能否交互，可如何交互等。其次，由于本作品有多个较为独立的系统，系统的边界必须是清晰可辨的。</p>
+<p>因此在场景色彩设计中，可以使用自发光效果提升可交互元素的辨认度。每个系统可以有一个特定的、与其他系统明显不同的特征颜色，以此明确系统边界。</p>
+<p>对于火光等光线设计，可以为其添加摇曳、明暗闪烁等效果，以提升沉浸度。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/InteractiveObjects.jpg" alt="可交互物体的特征色"></p>
+<h1 id="程序架构设计及应用"><a href="#程序架构设计及应用" class="headerlink" title="程序架构设计及应用"></a>程序架构设计及应用</h1><h2 id="游戏框架"><a href="#游戏框架" class="headerlink" title="游戏框架"></a>游戏框架</h2><p>UE引擎自带一套Epic的游戏框架，是较为一套较为成熟的管理游戏逻辑的类和组件，主要包括游戏模式（Game Mode）、玩家控制器（Player Controller）、玩家角色（Pawn）等。直接使用其提供的框架可以更为便捷地开发。</p>
+<p><strong>游戏模式 Game Mode</strong></p>
+<p>游戏模式用于设置和实现游戏的规则，比如游戏的胜利条件、游戏暂停逻辑等，同时还控制着游戏的不同阶段，比如等待开始、进行中、结束等。每个关卡只能有一个游戏模式，可以根据不同的游戏类型或场景来创建不同的游戏模式子类。</p>
+<p>在本作品中，设计一个游戏模式基类，其包含一些未实现的虚函数，如：暂停函数，切换关卡函数，玩家按任意键函数，保存游戏等。在子类中，根据具体关卡对其进行重载，实现对应功能。</p>
+<p>设计一个枚举值EGameState来管理游戏状态，其包含游玩中、暂停中、玩家死亡、播放过场动画等游戏状态。在功能实现时可以根据游戏状态对同样的操作做出不同反应。</p>
+<p><strong>玩家控制器 Player Controller</strong></p>
+<p>玩家控制器用于接收和处理玩家的输入，并根据具体情况，将其转换为对Pawn的控制。玩家控制器还负责管理玩家的视角、摄像机、HUD等。一个玩家对应一个玩家控制器，可以根据不同关卡和需求来创建不同的玩家控制器子类。</p>
+<p>在本作品中，设计一个玩家控制器基类，包含一些虚函数，如：按任意键、按确定键，按退出键等。在子类中发送到对应游戏模式的对应函数。</p>
+<p>玩家控制器负责管理玩家的UI，其中实现如弹出的提示UI与确认窗口等。</p>
+<p>除此之外，控制器中还要负责控制音频聆听者位置的设置。一般来讲，对于第三人称游戏，音频聆听者位置位于摄像机与角色之间，靠近角色的位置，沉浸感最强。</p>
+<p><strong>游戏实例 Game Instance</strong></p>
+<p>游戏实例是在当前游戏的实例中运行的逻辑，一般用于存储和同步游戏的状态和数据，比如玩家的设置、存档、成就等。游戏实例在整个游戏过程中都保持存在，不会因为地图切换而销毁。</p>
+<p>在本作品中，其主要负责储存游戏和储存玩家设置等。</p>
+<p><strong>碰撞以及检测通道</strong></p>
+<p>UE的自定义通道可以用于控制不同的物理形体之间的碰撞和检测响应。可以自定义两种类型的检测通道：对象通道（Object Channel）和检测通道（Trace Channel）。</p>
+<p>在本作品中，对于交互机制，创建新对象通道Interactive对象，用于管理可交互物品的交互体积；此外，使用新对象通道Plate管理可以压下压力板的物体。</p>
+<p>对于光线相关机制，创建对象通道Reflective和检测通道Light，用于光线的发射和反射相关逻辑的编写。</p>
+<h2 id="角色框架"><a href="#角色框架" class="headerlink" title="角色框架"></a>角色框架</h2><p>基于UE自带的Character类进行拓展编写。</p>
+<p><strong>角色状态</strong></p>
+<p>使用枚举值ECharacterState管理角色的状态，根据玩家操作和状态进行切换，同时只能存在于一种状态中。</p>
+<table>
+<thead>
+<tr>
+<th align="center">状态</th>
+<th align="center">枚举值</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">站立</td>
+<td align="center">Stand</td>
+<td align="center">角色站立</td>
+</tr>
+<tr>
+<td align="center">移动</td>
+<td align="center">Run</td>
+<td align="center">自由走动或跑动</td>
+</tr>
+<tr>
+<td align="center">交互</td>
+<td align="center">Process</td>
+<td align="center">交互过程中</td>
+</tr>
+<tr>
+<td align="center">钩索</td>
+<td align="center">Hook</td>
+<td align="center">正在使用钩索</td>
+</tr>
+<tr>
+<td align="center">搬</td>
+<td align="center">Hold</td>
+<td align="center">正在搬东西</td>
+</tr>
+<tr>
+<td align="center">推</td>
+<td align="center">Push</td>
+<td align="center">正在推东西</td>
+</tr>
+<tr>
+<td align="center">休息</td>
+<td align="center">Rest</td>
+<td align="center">正在休息</td>
+</tr>
+<tr>
+<td align="center">程序移动</td>
+<td align="center">MoveTo</td>
+<td align="center">程序控制的移动</td>
+</tr>
+<tr>
+<td align="center">死亡</td>
+<td align="center">Die</td>
+<td align="center">死亡</td>
+</tr>
+</tbody></table>
+<p><strong>玩家输入与角色反馈</strong></p>
+<p>一般来讲，要想增加玩家交互的爽快度，玩家应该可以使用少量输入对应大量不同反馈。</p>
+<p>因此，在本项目中，对于玩家相同的输入，根据角色状态会产生不同的反馈，比如在玩家点击交互键时，如果没有火把角色会直接走过去交互，但如果有火把，角色会在走过去的同时收起火把。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/SwithCharacterState.jpg" alt="根据角色状态对相同输入做出不同反应"></p>
+<p><strong>角色动画及动作行为</strong></p>
+<p>UE的动画系统较为复杂，由动画蓝图，状态机，动画蒙太奇，混合空间等组成。其中动画蓝图控制着整个动画逻辑，状态机和混合空间控制玩家的状态动画，动画蒙太奇控制只播放一次的动作。</p>
+<p>在本项目中，移动，推动，搬起等循环状态动画使用状态机控制；去交互、脱离交互、收起拿出火把等短时间内只播放一次的动作动画通过动画蒙太奇控制。整体通过动画蓝图进行统筹，并使用骨骼蒙版进行混合。</p>
+<p><strong>动画IK</strong></p>
+<p>IK可以通过给定的骨骼末端位置计算出前端骨骼的旋转值。</p>
+<p>在本作品中，使用UE5的新功能Control Rig，在玩家移动时，通过射线检测，将人物双脚通过IK实时贴合地面，以防止在斜坡上角色悬空或穿模等视觉问题。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/FootIKShow.jpg" alt="双脚吸附在地面"></p>
+<h2 id="火相关玩法元素"><a href="#火相关玩法元素" class="headerlink" title="火相关玩法元素"></a>火相关玩法元素</h2><p><strong>火系统介绍及设计</strong></p>
+<p>火系统主要包括火把、篝火、易燃物等。主要机制为热量的传递，在到达燃点后燃烧，在燃点下会持续降温。</p>
+<p>综上，本作品选择使用一个基类实现可以复用的功能函数，并通过接口传递热量。</p>
+<p><strong>基类设计</strong></p>
+<p>基类包含一些基本的状态变量，如：是否在燃烧、燃点、每秒向外传递热量等。同时还实现一些通用函数，如：向其他可燃物传递热量、接受其他燃烧物的热量等。</p>
+<p>同时还需要实现一些音频播放、火焰特效播放、火焰摇曳等功能。</p>
+<p><strong>接口设计及通信</strong></p>
+<p>设计接口IFlammable，可以通过其中的HeatConduct函数传递热量。对于可以接受热量的物体，只需要实现此函数即可，扩展性强。</p>
+<h2 id="光相关玩法元素"><a href="#光相关玩法元素" class="headerlink" title="光相关玩法元素"></a>光相关玩法元素</h2><p><strong>光系统介绍及设计</strong></p>
+<p>光系统主要包含光线、反射镜等。主要机制为光线在普通表面停止传播，在反射镜表面反弹并继续传播。</p>
+<p>综上，本作品选择使用射线检测进行光线传播，通过Light检测通道进行射线检测，有结果后根据检测点的碰撞类型决定光线行为：如为Reflective则继续反射，其他则停止反射。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/LightHitResponce.jpg" alt="光线击中不同物体的不同反应"></p>
+<p><strong>接口设计及通信</strong></p>
+<p>本作品设计使用光能板可以将光能转化为电能，因此设计接口ILight在这两个系统间通信。其包含LightHit函数，射线检测对象只要实现了此函数就可以接受光能，保证了拓展性，降低了耦合度。</p>
+<h2 id="电相关玩法元素"><a href="#电相关玩法元素" class="headerlink" title="电相关玩法元素"></a>电相关玩法元素</h2><p><strong>电系统介绍及设计</strong></p>
+<p>电系统主要包含电池、电容、电线、开关等。主要机制是用过联通电路进行电能储存、传输与消耗。</p>
+<p>综上，本作品使用接口在各个用电器间通信，传输电能并返回消耗的能量。并且设计一个电器基类，管理可以通电的玩法元素。</p>
+<p><strong>基类设计</strong></p>
+<p>基类包含一些基本的电量元素，如：现有电能，最大电能，消耗电能速度等。同时实现一些常用功能函数，如：充电，每秒消耗电能和向目标传输电能等。</p>
+<p><strong>接口设计及通信</strong></p>
+<p>设计接口IElectronic负责电能的传输，其中包含Conduct函数，输入电能和电压，返回消耗的电能。通过此，可以实现电容的充电和放电功能，需要添加新的电器元素只需要实现此接口即可。</p>
+<h2 id="交互相关玩法元素"><a href="#交互相关玩法元素" class="headerlink" title="交互相关玩法元素"></a>交互相关玩法元素</h2><p><strong>交互系统介绍及设计</strong></p>
+<p>交互元素主要包括拉杆、开关、旋转台等。交互种类有默认交互（Process）、推（Push）、搬（Hold）等，通过枚举值EInteractType控制。在玩家角色中，玩家通过接口获得当前交互类型，并做出对应反馈。</p>
+<p><strong>通过碰撞检测通道控制交互响应</strong></p>
+<p>所有可交互体积都为Interactive物体通道，玩家只对此类型碰撞体产生交互反馈，以节省碰撞检测性能。</p>
+<p><strong>接口设计及通信</strong></p>
+<p>设计接口IInteract负责交互通信，其中的部分函数如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CheckCanInteract</td>
+<td align="center">获取能否交互</td>
+</tr>
+<tr>
+<td align="center">GetInteractTipInfo</td>
+<td align="center">获取交互提示字</td>
+</tr>
+<tr>
+<td align="center">GetMoveToInfo</td>
+<td align="center">获取交互点位置及旋转</td>
+</tr>
+<tr>
+<td align="center">Interact</td>
+<td align="center">开始交互，返回交互种类</td>
+</tr>
+<tr>
+<td align="center">StopInteract</td>
+<td align="center">停止交互，返回停止交互种类</td>
+</tr>
+<tr>
+<td align="center">······</td>
+<td align="center">······</td>
+</tr>
+</tbody></table>
+<p>通过此接口的设计，如果需要添加新可交互物品，只需要全部实现接口函数即可，后期拓展十分方便。</p>
+<h2 id="音频框架"><a href="#音频框架" class="headerlink" title="音频框架"></a>音频框架</h2><p><strong>UE音频介绍</strong></p>
+<p>UE引擎的音频系统和框架是一套强大而灵活的工具和功能，用于创建和播放游戏内声音。包括音频类、Sound Cue、音频衰减、音频混合器、音频效果等。</p>
+<p><strong>音频类设计</strong></p>
+<p>音频类的作用是对游戏中的音频进行分类管理，以实现不同的音频行为和效果，如统一调节音量、混响、并发等。</p>
+<p>在本作品中，在主音频类下分为三个子音频类：UI、音乐和音效。这三个大类可以在设置界面分别调整音量，同时一些混响设置应该只应用于音效，而不应该影响UI和音乐。</p>
+<p>在音效类下，还细分为更多子音频类，用于分组微调音量、音高等。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/SoundClass.jpg" alt="音频类层级树"></p>
+<p><strong>混响与脉冲响应函数</strong></p>
+<p>UE引擎自带的混响是一种算法混响，它使用延迟缓冲、滤波器和其他DSP拓扑来模拟声音在不同空间中的反射和衰减。</p>
+<p>脉冲响应函数（IR函数）混响是一种卷积混响，它使用来自物理空间的音频样本来模拟混响。</p>
+<p>这二者的区别在于，前者是基于算法的，后者是基于数据的。算法混响通常更灵活和高效，但不够真实和沉浸。数据混响通常更真实和沉浸，但可能更耗资源和复杂。</p>
+<p>在本作品中，由于性能瓶颈在GPU，所以在CPU端可以使用一些较为复杂的资源，因此本作品使用的是更为真实的脉冲响应函数混响。</p>
+<p><strong>音频特效</strong></p>
+<p>音频特效主要是各种滤波器、回声等。主要有在衰减函数中应用的基于距离的特效以及子混合特效。</p>
+<p>在衰减函数中，可以基于距离应用低通滤波器，模拟空气对于高频音波的吸收。子混合则可以更灵活地应用各种效果，将子混合预设应用到对应音频类上就可以根据音频类控制特效。</p>
+<h1 id="结论及展望"><a href="#结论及展望" class="headerlink" title="结论及展望"></a>结论及展望</h1><h2 id="遇到的问题及解决方案"><a href="#遇到的问题及解决方案" class="headerlink" title="遇到的问题及解决方案"></a>遇到的问题及解决方案</h2><p><strong>Git同步大文件的问题</strong></p>
+<p>在使用Git进行版本管理过程中，出现了部分地图、贴图等非文本文件过大导致（超过100MB）导致无法提交的情况。</p>
+<p>经过资料的查阅，最终使用了Git的Large File Storge（LFS）扩展解决了问题。Git LFS可以用来管理大文件，比如音频、视频、数据集、图形等。</p>
+<p>不过最佳方案是在制作阶段就尽量避免大文件的出现，尽量避免将无关文件提交至云端、提前压缩贴图文件、或是拆分大文件等。</p>
+<p><strong>优化问题</strong></p>
+<p>在后期打包测试时，打包出的文件出现了帧率过低卡顿的问题，但在编辑期内测试并无卡顿迹象，需要定位性能瓶颈并进行优化。</p>
+<p>首先，使用UE自带的stat unit定位出性能瓶颈为GPU，然后观察运行时任务管理器曲线确定瓶颈为显存不足，由此推断场景内贴图过大导致显存不足，最终拉低帧率。</p>
+<p>定位可能的问题点后，尝试通过压缩贴图解决显存问题，主要方法如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">原理</th>
+<th align="center">适用范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">降分辨率</td>
+<td align="center">直接降低图片分辨率</td>
+<td align="center">远超所需精细度的贴图</td>
+</tr>
+<tr>
+<td align="center">合并单通道贴图</td>
+<td align="center">将多个单通道贴图分通道合并为一个多通道贴图</td>
+<td align="center">单通道且分辨率相同的贴图</td>
+</tr>
+<tr>
+<td align="center">修改压缩方式</td>
+<td align="center">对于单通道贴图，只储存一个通道的颜色值</td>
+<td align="center">无法合并的单通道贴图</td>
+</tr>
+</tbody></table>
+<p>经过优化后，帧率显著提升，卡顿问题解决。</p>
+<h2 id="创作经验"><a href="#创作经验" class="headerlink" title="创作经验"></a>创作经验</h2><p><strong>项目规范</strong></p>
+<p>在项目开始初期，就要规范文件夹层级结构以及命名规范，并在制作过程中严格遵守。这样在后期项目内资源增多后，还可以快速定位资源位置，防止不必要的开发时间浪费。</p>
+<p>对于文件夹层级结构，应该根据资源的实际用途进行分文件夹，而不应该使用资源类型。因为资源的文件名本身已经提供了资源类型信息，所以在目录名中再提供资源类型信息就是多余的，而且使用UE自带的过滤器，也可以非常便利地实现相同的功能。</p>
+<p><strong>前期框架架构设计的重要性</strong></p>
+<p>在项目开始初期，应该在具体开工前，根据现有的策划案，尽量设计一个完善且拓展性强的架构，并做技术预研测试架构可行性。</p>
+<p>通过前期架构设计，可以提前规划系统的功能范围和划分，确定系统的技术选型和开发框架，从不同维度满足系统以及策划的各种需求。以提高系统的质量、性能、可扩展性、可维护性，降低开发难度和成本，避免后期重构和修改。</p>
+<p><strong>通过少量多次对接与美术高效合作</strong></p>
+<p>在与美术对接时，可以采用少量多次的对接方法。比如在美术制作完初步白模后就进行一次对接，先使用白模进行测试，后期美术有更新后直接替换游戏内资源即可。</p>
+<p>这样可以将美术资源的导入与调整工作平均分配在整个工作流程中，防止后期积攒很多美术资源待导入和调整导致手忙脚乱。其次，还可以尽早发现美术资源的问题，降低修改的沉没成本。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1]    大野功二. ３Dゲームをおもしろくする技術[M]. Japan: SB Creative Corp., 2014: 34-37.</p>
+<p>[2]    Allar. Gamemakin UE4 Style Guide[J&#x2F;OL]. <a target="_blank" rel="noopener" href="https://github.com/Allar/ue5-style-guide">https://github.com/Allar/ue5-style-guide</a>.</p>
+<p>[3]    Tracy Fullerton. 游戏设计梦工厂[M]. 北京: 电子工业出版社, 2016: 460-464.</p>
+<h1 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h1><p>游戏链接：<br><a target="_blank" rel="noopener" href="https://kkdt0fxrav.feishu.cn/drive/folder/JCtSfUqM9llJ3ndqX4ScQgb6njc">https://kkdt0fxrav.feishu.cn/drive/folder/JCtSfUqM9llJ3ndqX4ScQgb6njc</a></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/Cover1.jpg"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">正式这种素质</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://1keven1.github.io/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/">https://1keven1.github.io/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://1keven1.github.io" target="_blank">SuzhiのBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/UE5/">UE5</a><a class="post-meta__tags" href="/tags/%E8%93%9D%E5%9B%BE/">蓝图</a><a class="post-meta__tags" href="/tags/%E5%A4%A7%E5%9E%8B%E6%B8%B8%E6%88%8F/">大型游戏</a></div><div class="post_share"><div class="social-share" data-image="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/Cover1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_WX.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_WX.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_ZFB.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/QR_ZFB.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/02/18/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E4%B8%8A%E5%B8%9D%E6%8E%B7%E9%AA%B0%E5%AD%90%E5%90%97%EF%BC%9F%E9%87%8F%E5%AD%90%E7%89%A9%E7%90%86%E5%AD%A6%E5%8F%B2%E8%AF%9D/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]HistoryOfQuantumPhysics/Cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【读书笔记】上帝掷骰子吗？量子物理学史话</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/08/01/%E3%80%90Houdini%E3%80%91ProjectTitan%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="【Houdini】Project Titan学习笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Houdini]ProjectTitan/Cover.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-01</div><div class="title">【Houdini】Project Titan学习笔记</div></div></a></div><div><a href="/2020/02/06/%E3%80%90UE4%E3%80%91GGJ2020-TheDungeons/" title="【UE4】GGJ2020——The Dungeons 48h逆向塔防小游戏"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE4]GGJ2020TheDungeons/Logo.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-06</div><div class="title">【UE4】GGJ2020——The Dungeons 48h逆向塔防小游戏</div></div></a></div><div><a href="/2020/06/04/%E3%80%90UE4%E3%80%91LostPearl%E2%80%94%E2%80%94%E5%89%A7%E6%83%85%E5%A4%AA%E7%A9%BA%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F/" title="【UE4】Lost Pearl——剧情太空射击游戏"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE4]LostPearl/Finish.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-04</div><div class="title">【UE4】Lost Pearl——剧情太空射击游戏</div></div></a></div><div><a href="/2020/10/28/%E3%80%90UE4%E3%80%91MiniGame2020%E2%80%94%E2%80%94Mr-TrueMan%E5%88%9B%E6%96%B0%E7%8E%A9%E6%B3%95%E4%BF%AF%E8%A7%86%E8%A7%92%E5%BC%B9%E5%B9%95%E5%B0%84%E5%87%BB%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="【UE4】MiniGame2020——Mr.TrueMan 创新玩法俯视角弹幕射击小游戏"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE4]MrTrueMan/Start.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-28</div><div class="title">【UE4】MiniGame2020——Mr.TrueMan 创新玩法俯视角弹幕射击小游戏</div></div></a></div><div><a href="/2020/05/20/%E3%80%90UE4%E3%80%91EscapeFromGravity%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E9%87%8D%E5%8A%9B%E7%8E%A9%E6%B3%95%E7%9A%84%E5%A4%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E9%97%AF%E5%85%B3%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="【UE4】Escape From Gravity——基于重力玩法的太空飞行闯关小游戏"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE4]EscapeFromGravity/SS2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-20</div><div class="title">【UE4】Escape From Gravity——基于重力玩法的太空飞行闯关小游戏</div></div></a></div><div><a href="/2020/02/01/%E3%80%90UE4%E3%80%91%E5%88%92%E8%B1%86%E8%B1%86%E2%80%94%E2%80%94%E6%89%8B%E6%9C%BA%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="【UE4】划豆豆——手机小游戏"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE4]HuaDouDou/Start.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-02-01</div><div class="title">【UE4】划豆豆——手机小游戏</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/Avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">正式这种素质</div><div class="author-info__description">Suzhi_Zhang</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">71</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">58</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">34</div></a></div></div><a id="card-info-btn" href="/about/"><i class="fas fa-heart"></i><span>俺の紹介</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/1keven1" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://steamcommunity.com/profiles/76561198373086208/" target="_blank" title="Steam"><i class="fab fa-steam"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=9D8RfprO-2JfSwD_Fcm7Hlm2BVacjsLU&amp;noverify=0" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="https://space.bilibili.com/19287347/" target="_blank" title="Bilibili"><i class="fas fa-bold"></i></a><a class="social-icon" href="mailto:zhangsuzhe@sina.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">微信：omaewamousinndeiru <br/> QQ：577181274 <br/> 添加请标明来意<br/>理由を説明してください <br/> 邮箱：zhangsuzhe@sina.com</div></div><div class="card-widget"><div class="item-headline"><i class="iconfont icon-zuopin"></i><span>作品集</span></div><div class="item-content"><a style="font-size:17px;" href="/categories/作品集/"><strong>全部</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/游戏/"><strong>游戏</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/技美/"><strong>技美</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/美术/"><strong>美术</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/CPP/"><strong>C++</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/网页/"><strong>网页</strong></a><br/> <a style="font-size:17px;" href="/categories/作品集/高中/"><strong>高校時代</strong></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">游戏截图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">游戏介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E8%AE%BE%E5%AE%9A"><span class="toc-number">2.1.</span> <span class="toc-text">背景设定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="toc-number">2.2.</span> <span class="toc-text">基本信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%A9%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-number">2.3.</span> <span class="toc-text">玩法简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B7%A5"><span class="toc-number">2.4.</span> <span class="toc-text">分工</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">前期产品分析设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E5%93%81%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90"><span class="toc-number">3.1.</span> <span class="toc-text">作品系统分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E5%93%81%E9%A3%8E%E6%A0%BC%E5%88%86%E6%9E%90"><span class="toc-number">3.2.</span> <span class="toc-text">作品风格分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%8F%8A%E5%BA%94%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">程序架构设计及应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6"><span class="toc-number">4.1.</span> <span class="toc-text">游戏框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E6%A1%86%E6%9E%B6"><span class="toc-number">4.2.</span> <span class="toc-text">角色框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%AB%E7%9B%B8%E5%85%B3%E7%8E%A9%E6%B3%95%E5%85%83%E7%B4%A0"><span class="toc-number">4.3.</span> <span class="toc-text">火相关玩法元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%9B%B8%E5%85%B3%E7%8E%A9%E6%B3%95%E5%85%83%E7%B4%A0"><span class="toc-number">4.4.</span> <span class="toc-text">光相关玩法元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E7%9B%B8%E5%85%B3%E7%8E%A9%E6%B3%95%E5%85%83%E7%B4%A0"><span class="toc-number">4.5.</span> <span class="toc-text">电相关玩法元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E7%9B%B8%E5%85%B3%E7%8E%A9%E6%B3%95%E5%85%83%E7%B4%A0"><span class="toc-number">4.6.</span> <span class="toc-text">交互相关玩法元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E9%A2%91%E6%A1%86%E6%9E%B6"><span class="toc-number">4.7.</span> <span class="toc-text">音频框架</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA%E5%8F%8A%E5%B1%95%E6%9C%9B"><span class="toc-number">5.</span> <span class="toc-text">结论及展望</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">5.1.</span> <span class="toc-text">遇到的问题及解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E4%BD%9C%E7%BB%8F%E9%AA%8C"><span class="toc-number">5.2.</span> <span class="toc-text">创作经验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-number">7.</span> <span class="toc-text">资源</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/10/%E3%80%90WebGL%E3%80%91%E7%BA%AF%E6%89%8B%E5%86%99Web%E7%AB%AF%E6%B8%B2%E6%9F%93%E5%99%A8%E5%8F%8A%E5%85%B6API/" title="【WebGL】纯手写Web端渲染器及其API"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[WebGL]SimpleWebGLRenderer/Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【WebGL】纯手写Web端渲染器及其API"/></a><div class="content"><a class="title" href="/2022/05/10/%E3%80%90WebGL%E3%80%91%E7%BA%AF%E6%89%8B%E5%86%99Web%E7%AB%AF%E6%B8%B2%E6%9F%93%E5%99%A8%E5%8F%8A%E5%85%B6API/" title="【WebGL】纯手写Web端渲染器及其API">【WebGL】纯手写Web端渲染器及其API</a><time datetime="2023-07-04T09:10:04.208Z" title="更新于 2023-07-04 17:10:04">2023-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/07/11/%E3%80%90Unity_Skynet%E3%80%91Hedgehog%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8ESkynet%E7%9A%84%E8%81%94%E6%9C%BA%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="【Unity/Skynet】Hedgehog——基于Skynet的联机小游戏"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Unity_Skynet]Hedgehog/Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【Unity/Skynet】Hedgehog——基于Skynet的联机小游戏"/></a><div class="content"><a class="title" href="/2022/07/11/%E3%80%90Unity_Skynet%E3%80%91Hedgehog%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8ESkynet%E7%9A%84%E8%81%94%E6%9C%BA%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="【Unity/Skynet】Hedgehog——基于Skynet的联机小游戏">【Unity/Skynet】Hedgehog——基于Skynet的联机小游戏</a><time datetime="2023-07-04T08:40:33.320Z" title="更新于 2023-07-04 16:40:33">2023-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/" title="【UE5】《辉电迷境》——火光电解谜毕设作品"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[UE5]PhaedonianMaze/Cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【UE5】《辉电迷境》——火光电解谜毕设作品"/></a><div class="content"><a class="title" href="/2023/05/19/%E3%80%90UE5%E3%80%91%E3%80%8A%E8%BE%89%E7%94%B5%E8%BF%B7%E5%A2%83%E3%80%8B%E2%80%94%E2%80%94%E7%81%AB%E5%85%89%E7%94%B5%E8%A7%A3%E8%B0%9C%E6%AF%95%E8%AE%BE%E4%BD%9C%E5%93%81/" title="【UE5】《辉电迷境》——火光电解谜毕设作品">【UE5】《辉电迷境》——火光电解谜毕设作品</a><time datetime="2023-07-04T07:15:36.289Z" title="更新于 2023-07-04 15:15:36">2023-07-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%9A%84236%E4%B8%AA%E6%8A%80%E5%B7%A7/" title="【读书笔记】游戏设计的236个技巧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Post/[Book]GameDesign236Tech/Cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【读书笔记】游戏设计的236个技巧"/></a><div class="content"><a class="title" href="/2022/11/17/%E3%80%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E3%80%91%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1%E7%9A%84236%E4%B8%AA%E6%8A%80%E5%B7%A7/" title="【读书笔记】游戏设计的236个技巧">【读书笔记】游戏设计的236个技巧</a><time datetime="2023-07-03T14:38:47.007Z" title="更新于 2023-07-03 22:38:47">2023-07-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/02/25/%E4%B9%A6%E5%8D%95/" title="书单以及读书笔记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitcode.net/qq_40502821/blogimg/-/raw/master/Blog/DefaultPost2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="书单以及读书笔记"/></a><div class="content"><a class="title" href="/2021/02/25/%E4%B9%A6%E5%8D%95/" title="书单以及读书笔记">书单以及读书笔记</a><time datetime="2023-05-14T02:50:52.200Z" title="更新于 2023-05-14 10:50:52">2023-05-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 正式这种素质</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">哟，欢迎来到<a href="https://1keven1.github.io/">我的博客</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = new Waline(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-comment-4e7b4i3ay.vercel.app/',
+      path: location.pathname,
+      visitor: false,
+      dark: 'html[data-theme="dark"]'
+    }, null))
+  }
+
+  if (typeof Waline === 'function') initWaline()
+  else getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js').then(initWaline)
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
